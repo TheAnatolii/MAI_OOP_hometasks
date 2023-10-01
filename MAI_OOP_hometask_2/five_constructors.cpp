@@ -37,4 +37,26 @@ Five::Five(const std::initializer_list<unsigned char> &t)
 
 Five::Five(const std::string &t)
 {
+    _size = t.size();
+    _num = new unsigned char[_size]{};
+    size_t position = _size - 1;
+    for (const unsigned char &letter : t)
+    {
+        if (letter != 0 and (letter < 48 or letter > 52))
+        {
+            throw std::invalid_argument("Your symbol is not in five-digit number system!\n");
+        }
+        _num[position--] = letter;
+    }
+}
+
+Five::Five(const Five &other)
+{
+    _size = other._size;
+    _num = new unsigned char[_size];
+
+    for (size_t i = 0; i != _size; ++i)
+    {
+        _num[i] = other._num[i];
+    }
 }

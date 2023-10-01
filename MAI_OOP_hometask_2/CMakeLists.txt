@@ -5,9 +5,13 @@ set(CMAKE_CXX_STANDARD 20)
 
 # add_subdirectory(googletest)
 
-add_executable(five 
-    five.cpp
-    five.hpp)
+add_executable(
+    five 
+    main.cpp    
+    five_constructors.cpp
+    five.hpp
+    five_gets.cpp
+)
 
 # add_executable(tests tests.cpp functions.cpp)
 

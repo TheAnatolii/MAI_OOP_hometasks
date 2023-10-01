@@ -60,3 +60,23 @@ Five::Five(const Five &other)
         _num[i] = other._num[i];
     }
 }
+
+Five::Five(Five &&other) noexcept
+{
+    _size = other._size;
+    _num = new unsigned char[_size];
+
+    for (size_t i = 0; i != _size; ++i)
+    {
+        _num[i] = other._num[i];
+    }
+
+    delete other._num;
+    other._size = 0;
+}
+
+Five::~Five() noexcept
+{
+    _size = 0;
+    delete _num;
+}

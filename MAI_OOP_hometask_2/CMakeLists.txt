@@ -3,19 +3,20 @@ project(OOP_MAI)
 set(CMAKE_CXX_STANDARD 20)
 
 
-# add_subdirectory(googletest)
+add_subdirectory(googletest)
 
 add_executable(
-    five 
-    main.cpp    
+    five_test   
+    tests.cpp
     five_constructors.cpp
     five.hpp
     five_gets.cpp
+    five_private.cpp
 )
 
 # add_executable(tests tests.cpp functions.cpp)
 
-# target_link_libraries(tests PRIVATE GTest::gtest_main)
+target_link_libraries(five_test PRIVATE GTest::gtest_main)
 
-# include(GoogleTest)
-# gtest_discover_tests(tests)
+include(GoogleTest)
+gtest_discover_tests(five_test)

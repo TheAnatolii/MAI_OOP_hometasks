@@ -17,4 +17,6 @@ public:
     virtual ~Five() noexcept;
 
     unsigned char *get_value();
+    size_t get_size();
+    std::string get_value_string();
 };

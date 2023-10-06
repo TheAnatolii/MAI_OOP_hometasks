@@ -337,7 +337,7 @@ size_t Five::get_size()
 }
 ```
 
-### seven_private.cpp
+### five_private.cpp
 ```
 #include "five.hpp"
 

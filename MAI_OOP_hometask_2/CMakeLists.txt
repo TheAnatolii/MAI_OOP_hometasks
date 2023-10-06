@@ -16,8 +16,6 @@ add_executable(
     five_algebra_operators.cpp
 )
 
-# add_executable(tests tests.cpp functions.cpp)
-
 target_link_libraries(five_test PRIVATE GTest::gtest_main)
 
 include(GoogleTest)

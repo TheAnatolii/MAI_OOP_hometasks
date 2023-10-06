@@ -12,6 +12,8 @@ add_executable(
     five.hpp
     five_gets.cpp
     five_private.cpp
+    five_bool_operators.cpp
+    five_algebra_operators.cpp
 )
 
 # add_executable(tests tests.cpp functions.cpp)

@@ -19,4 +19,12 @@ public:
     unsigned char *get_value();
     size_t get_size();
     std::string get_value_string();
+
+    bool operator==(const Five &other);
+    bool operator<(const Five &other);
+    bool operator>(const Five &other);
+
+    Five &operator=(const Five &other);
+    Five operator+(const Five &other);
+    Five operator-(const Five &other);
 };

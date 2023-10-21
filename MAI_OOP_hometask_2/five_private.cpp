@@ -8,6 +8,6 @@ void Five::_resize()
     {
         resized[i] = _num[i];
     }
-    delete _num;
+    delete[] _num;
     _num = resized;
 }

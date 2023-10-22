@@ -1,0 +1,3 @@
+/Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_3/build/CMakeFiles/figure.dir
+/Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_3/build/CMakeFiles/edit_cache.dir
+/Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_3/build/CMakeFiles/rebuild_cache.dir

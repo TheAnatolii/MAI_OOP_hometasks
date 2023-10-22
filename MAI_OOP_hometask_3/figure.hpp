@@ -11,10 +11,10 @@ struct point
 class Figure
 {
 protected:
-    Figure() = default;
+    Figure();
 
 public:
-    virtual ~Figure() = default;
+    virtual ~Figure();
     virtual double Square() const = 0;
     virtual point mid_dot() const = 0;
     virtual operator double() const = 0;

@@ -1,27 +1,28 @@
-#include "five_angles.hpp"
+#include "eight_angles.hpp"
 #include <string>
 #include <vector>
 #include <cmath>
 
-five_angles::five_angles()
-    : x_coordinates({0.0, 0.0, 0.0, 0.0, 0.0}), y_coordinates({0.0, 0.0, 0.0, 0.0, 0.0}), surface(0), mid_dot_x(0), mid_dot_y(0)
+eight_angles::eight_angles()
+    : x_coordinates({0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0}),
+      y_coordinates({0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0}), surface(0), mid_dot_x(0), mid_dot_y(0)
 {
 }
 
-five_angles::five_angles(std::vector<double> &x, std::vector<double> &y)
+eight_angles::eight_angles(std::vector<double> &x, std::vector<double> &y)
     : mid_dot_x(0), mid_dot_y(0)
 {
-    if (x_coordinates.size() != 5)
+    if (x_coordinates.size() != 8)
     {
-        x_coordinates.resize(5);
+        x_coordinates.resize(8);
     }
 
-    if (y_coordinates.size() != 5)
+    if (y_coordinates.size() != 8)
     {
-        y_coordinates.resize(5);
+        y_coordinates.resize(8);
     }
 
-    for (int i = 0; i < 5; ++i)
+    for (int i = 0; i < 8; ++i)
     {
         x_coordinates[i] = x[i];
         y_coordinates[i] = y[i];
@@ -29,14 +30,14 @@ five_angles::five_angles(std::vector<double> &x, std::vector<double> &y)
         mid_dot_y += y[i];
     }
 
-    mid_dot_x /= 5;
-    mid_dot_y /= 5;
+    mid_dot_x /= 8;
+    mid_dot_y /= 8;
 
     double length = std::sqrt(std::pow(x[0] - x[1], 2) + std::pow(y[0] - y[1], 2));
-    surface = 5 * 0.5 * length * (length / 2) * tan(54);
+    surface = 2 * length * length * (sqrt(2) + 1);
 }
 
-five_angles::~five_angles()
+eight_angles::~eight_angles()
 {
     x_coordinates = {};
     y_coordinates = {};
@@ -45,7 +46,7 @@ five_angles::~five_angles()
     surface = 0;
 }
 
-bool five_angles::operator==(five_angles &other) const
+bool eight_angles::operator==(eight_angles &other) const
 {
     if (surface != other.surface)
     {
@@ -57,7 +58,7 @@ bool five_angles::operator==(five_angles &other) const
     }
 }
 
-five_angles &five_angles::operator=(five_angles &other)
+eight_angles &eight_angles::operator=(eight_angles &other)
 {
     x_coordinates = other.x_coordinates;
     y_coordinates = other.y_coordinates;
@@ -67,7 +68,7 @@ five_angles &five_angles::operator=(five_angles &other)
     return *this;
 }
 
-five_angles &five_angles::operator=(five_angles &&other)
+eight_angles &eight_angles::operator=(eight_angles &&other)
 {
     x_coordinates = std::move(other.x_coordinates);
     y_coordinates = std::move(other.y_coordinates);

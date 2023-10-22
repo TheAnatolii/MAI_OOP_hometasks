@@ -66,9 +66,24 @@ int main()
     q.change(1, &h);
     q.change(2, &l);
 
-    auto t = *q[1];
-    std::cout << q.get_size() << std::endl;
-    std::cout << t << std::endl;
-
-    return 0;
+    for (int i = 0; i < 3; ++i)
+    {
+        const Figure *fig = q[i];
+        if (q[i] == nullptr)
+        {
+            std::cout << "The figure has been deleted" << std::endl;
+        }
+        else if (typeid(p) == typeid(*fig))
+        {
+            std::cout << *(five_angles *)q[i];
+        }
+        else if (typeid(h) == typeid(*fig))
+        {
+            std::cout << *(six_angles *)q[i];
+        }
+        else if (typeid(l) == typeid(*fig))
+        {
+            std::cout << *(eight_angles *)q[i];
+        }
+    }
 }

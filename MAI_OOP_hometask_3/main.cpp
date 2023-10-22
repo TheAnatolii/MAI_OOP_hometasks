@@ -86,4 +86,10 @@ int main()
             std::cout << *(eight_angles *)q[i];
         }
     }
+
+    std::cout << "\n\n";
+
+    five_angles ex = five_angles();
+    ex = p;
+    std::cout << ex;
 }

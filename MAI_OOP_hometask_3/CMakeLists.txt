@@ -15,15 +15,15 @@ add_executable(
 )
 
 add_executable(
-    figure  
-    test.cpp
+    tests 
+    tests.cpp
     five_angles.cpp
     six_angles.cpp
     eight_angles.cpp
     mass.cpp
 )
 
-target_link_libraries(five_test PRIVATE GTest::gtest_main)
+target_link_libraries(tests PRIVATE GTest::gtest_main)
 
 include(GoogleTest)
-gtest_discover_tests(five_test)
+gtest_discover_tests(tests)

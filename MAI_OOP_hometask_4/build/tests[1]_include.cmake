@@ -1,0 +1,5 @@
+if(EXISTS "/Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_4/build/tests[1]_tests.cmake")
+  include("/Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_4/build/tests[1]_tests.cmake")
+else()
+  add_test(tests_NOT_BUILT tests_NOT_BUILT)
+endif()

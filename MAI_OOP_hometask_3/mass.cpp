@@ -18,9 +18,12 @@ mass::mass(int lnght)
 
 mass::~mass()
 {
-    size = 0;
+    for (int i = 0; i < size; ++i)
+    {
+        delete lst[i];
+    }
     delete[] lst;
-    lst = nullptr;
+    size = 0;
 }
 
 Figure *mass::operator[](int index)

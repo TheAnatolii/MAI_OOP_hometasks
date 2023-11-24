@@ -1,8 +1,5 @@
 #include <iostream>
 #include <memory>
-#include <chrono>
-#include <list>
-#include <map>
 #include <utility>
 #include <deque>
 
@@ -12,7 +9,6 @@ class Allocator
 private:
     std::deque<T> _used_blocks;
     typename std::deque<T>::iterator _free_blocks;
-    // uint64_t _free_count;
 
 public:
     using value_type = T;
@@ -55,6 +51,12 @@ public:
     {
         p->~T();
     }
+
+    template <class U>
+    struct rebind
+    {
+        using other = Allocator<U>;
+    };
 };
 
 template <class T, class U>
@@ -68,3 +70,6 @@ constexpr bool operator!=(const Allocator<T> &lhs, const Allocator<U> &rhs)
 {
     return false;
 }
+
+// Allocator<int> a;
+// typename std::allocator_traits<Allocator<int>>::rebind_alloc<char>::other b;

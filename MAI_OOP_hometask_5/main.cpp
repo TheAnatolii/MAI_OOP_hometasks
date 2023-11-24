@@ -10,8 +10,10 @@ int main()
     // using alloc_traits = std::allocator_traits<Allocator<std::pair<const int, int>>>;
 
     // std::map<int, int, alloc_traits> m;
-    std::vector<int, Allocator<int>> v;
-    for (size_t i = 1; i != 10; ++i)
+
+    std::vector<int, Allocator<int>> v(10);
+    v[0] = 1;
+    for (size_t i = 1; i < 10; ++i)
     {
         v[i] = v[i - 1] * i;
     }

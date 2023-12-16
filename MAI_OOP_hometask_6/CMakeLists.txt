@@ -1,13 +1,12 @@
 cmake_minimum_required(VERSION 3.10)
 project(Lab06)
-
-# find_package(GTest REQUIRED)
-# include_directories(${GTEST_INCLUDE_DIRS})
-
 set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+# set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(lab_06 
+add_subdirectory(googletest)
+
+add_executable(
+    main 
     main.cpp
     observer.cpp
     factory.cpp
@@ -16,17 +15,17 @@ add_executable(lab_06
     thug.cpp
     elf.cpp)
 
-# enable_testing()
-# add_executable(
-#     tests06
-#     tests.cpp
-#     observer.cpp
-#     factory.cpp
-#     NPC.cpp
-#     bear.cpp
-#     thug.cpp
-#     elf.cpp)
+add_executable(
+    tests
+    test.cpp
+    observer.cpp
+    factory.cpp
+    NPC.cpp
+    bear.cpp
+    thug.cpp
+    elf.cpp)
 
-# target_link_libraries(tests06 ${GTEST_LIBRARIES})
+target_link_libraries(tests PRIVATE GTest::gtest_main)
 
-# add_test(NAME TESTS COMMAND tests06)
+include(GoogleTest)
+gtest_discover_tests(tests)

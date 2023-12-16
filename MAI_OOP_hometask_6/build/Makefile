@@ -85,6 +85,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"gmock\" \"gtest\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/build/CMakeFiles /Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/build//CMakeFiles/progress.marks
@@ -117,24 +162,90 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named lab_06
+# Target rules for targets named main
 
 # Build rule for target.
-lab_06: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab_06
-.PHONY : lab_06
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-lab_06/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/build
-.PHONY : lab_06/fast
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+#=============================================================================
+# Target rules for targets named tests
+
+# Build rule for target.
+tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
+
+# fast build rule for target.
+tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
+.PHONY : tests/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f googletest/googlemock/CMakeFiles/gmock.dir/build.make googletest/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f googletest/googlemock/CMakeFiles/gmock_main.dir/build.make googletest/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f googletest/googletest/CMakeFiles/gtest.dir/build.make googletest/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f googletest/googletest/CMakeFiles/gtest_main.dir/build.make googletest/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
 
 NPC.o: NPC.cpp.o
 .PHONY : NPC.o
 
 # target to build an object file
 NPC.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/NPC.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/NPC.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/NPC.cpp.o
 .PHONY : NPC.cpp.o
 
 NPC.i: NPC.cpp.i
@@ -142,7 +253,8 @@ NPC.i: NPC.cpp.i
 
 # target to preprocess a source file
 NPC.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/NPC.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/NPC.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/NPC.cpp.i
 .PHONY : NPC.cpp.i
 
 NPC.s: NPC.cpp.s
@@ -150,7 +262,8 @@ NPC.s: NPC.cpp.s
 
 # target to generate assembly for a file
 NPC.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/NPC.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/NPC.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/NPC.cpp.s
 .PHONY : NPC.cpp.s
 
 bear.o: bear.cpp.o
@@ -158,7 +271,8 @@ bear.o: bear.cpp.o
 
 # target to build an object file
 bear.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/bear.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/bear.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/bear.cpp.o
 .PHONY : bear.cpp.o
 
 bear.i: bear.cpp.i
@@ -166,7 +280,8 @@ bear.i: bear.cpp.i
 
 # target to preprocess a source file
 bear.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/bear.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/bear.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/bear.cpp.i
 .PHONY : bear.cpp.i
 
 bear.s: bear.cpp.s
@@ -174,7 +289,8 @@ bear.s: bear.cpp.s
 
 # target to generate assembly for a file
 bear.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/bear.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/bear.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/bear.cpp.s
 .PHONY : bear.cpp.s
 
 elf.o: elf.cpp.o
@@ -182,7 +298,8 @@ elf.o: elf.cpp.o
 
 # target to build an object file
 elf.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/elf.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/elf.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/elf.cpp.o
 .PHONY : elf.cpp.o
 
 elf.i: elf.cpp.i
@@ -190,7 +307,8 @@ elf.i: elf.cpp.i
 
 # target to preprocess a source file
 elf.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/elf.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/elf.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/elf.cpp.i
 .PHONY : elf.cpp.i
 
 elf.s: elf.cpp.s
@@ -198,7 +316,8 @@ elf.s: elf.cpp.s
 
 # target to generate assembly for a file
 elf.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/elf.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/elf.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/elf.cpp.s
 .PHONY : elf.cpp.s
 
 factory.o: factory.cpp.o
@@ -206,7 +325,8 @@ factory.o: factory.cpp.o
 
 # target to build an object file
 factory.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/factory.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/factory.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/factory.cpp.o
 .PHONY : factory.cpp.o
 
 factory.i: factory.cpp.i
@@ -214,7 +334,8 @@ factory.i: factory.cpp.i
 
 # target to preprocess a source file
 factory.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/factory.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/factory.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/factory.cpp.i
 .PHONY : factory.cpp.i
 
 factory.s: factory.cpp.s
@@ -222,7 +343,8 @@ factory.s: factory.cpp.s
 
 # target to generate assembly for a file
 factory.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/factory.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/factory.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/factory.cpp.s
 .PHONY : factory.cpp.s
 
 main.o: main.cpp.o
@@ -230,7 +352,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -238,7 +360,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -246,7 +368,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 observer.o: observer.cpp.o
@@ -254,7 +376,8 @@ observer.o: observer.cpp.o
 
 # target to build an object file
 observer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/observer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/observer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/observer.cpp.o
 .PHONY : observer.cpp.o
 
 observer.i: observer.cpp.i
@@ -262,7 +385,8 @@ observer.i: observer.cpp.i
 
 # target to preprocess a source file
 observer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/observer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/observer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/observer.cpp.i
 .PHONY : observer.cpp.i
 
 observer.s: observer.cpp.s
@@ -270,15 +394,41 @@ observer.s: observer.cpp.s
 
 # target to generate assembly for a file
 observer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/observer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/observer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/observer.cpp.s
 .PHONY : observer.cpp.s
+
+test.o: test.cpp.o
+.PHONY : test.o
+
+# target to build an object file
+test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test.cpp.o
+.PHONY : test.cpp.o
+
+test.i: test.cpp.i
+.PHONY : test.i
+
+# target to preprocess a source file
+test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test.cpp.i
+.PHONY : test.cpp.i
+
+test.s: test.cpp.s
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test.cpp.s
+.PHONY : test.cpp.s
 
 thug.o: thug.cpp.o
 .PHONY : thug.o
 
 # target to build an object file
 thug.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/thug.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/thug.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/thug.cpp.o
 .PHONY : thug.cpp.o
 
 thug.i: thug.cpp.i
@@ -286,7 +436,8 @@ thug.i: thug.cpp.i
 
 # target to preprocess a source file
 thug.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/thug.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/thug.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/thug.cpp.i
 .PHONY : thug.cpp.i
 
 thug.s: thug.cpp.s
@@ -294,7 +445,8 @@ thug.s: thug.cpp.s
 
 # target to generate assembly for a file
 thug.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_06.dir/build.make CMakeFiles/lab_06.dir/thug.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/thug.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/thug.cpp.s
 .PHONY : thug.cpp.s
 
 # Help Target
@@ -304,8 +456,17 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... lab_06"
+	@echo "... gmock"
+	@echo "... gmock_main"
+	@echo "... gtest"
+	@echo "... gtest_main"
+	@echo "... main"
+	@echo "... tests"
 	@echo "... NPC.o"
 	@echo "... NPC.i"
 	@echo "... NPC.s"
@@ -324,6 +485,9 @@ help:
 	@echo "... observer.o"
 	@echo "... observer.i"
 	@echo "... observer.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 	@echo "... thug.o"
 	@echo "... thug.i"
 	@echo "... thug.s"

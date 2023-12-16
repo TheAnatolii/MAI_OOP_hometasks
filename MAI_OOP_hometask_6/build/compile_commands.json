@@ -1,0 +1,44 @@
+[
+{
+  "directory": "/Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -o CMakeFiles/lab_06.dir/main.cpp.o -c /Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/main.cpp",
+  "file": "/Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/main.cpp",
+  "output": "CMakeFiles/lab_06.dir/main.cpp.o"
+},
+{
+  "directory": "/Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -o CMakeFiles/lab_06.dir/observer.cpp.o -c /Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/observer.cpp",
+  "file": "/Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/observer.cpp",
+  "output": "CMakeFiles/lab_06.dir/observer.cpp.o"
+},
+{
+  "directory": "/Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -o CMakeFiles/lab_06.dir/factory.cpp.o -c /Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/factory.cpp",
+  "file": "/Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/factory.cpp",
+  "output": "CMakeFiles/lab_06.dir/factory.cpp.o"
+},
+{
+  "directory": "/Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -o CMakeFiles/lab_06.dir/NPC.cpp.o -c /Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/NPC.cpp",
+  "file": "/Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/NPC.cpp",
+  "output": "CMakeFiles/lab_06.dir/NPC.cpp.o"
+},
+{
+  "directory": "/Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -o CMakeFiles/lab_06.dir/bear.cpp.o -c /Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/bear.cpp",
+  "file": "/Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/bear.cpp",
+  "output": "CMakeFiles/lab_06.dir/bear.cpp.o"
+},
+{
+  "directory": "/Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -o CMakeFiles/lab_06.dir/thug.cpp.o -c /Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/thug.cpp",
+  "file": "/Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/thug.cpp",
+  "output": "CMakeFiles/lab_06.dir/thug.cpp.o"
+},
+{
+  "directory": "/Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -o CMakeFiles/lab_06.dir/elf.cpp.o -c /Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/elf.cpp",
+  "file": "/Users/anatolii/Desktop/OOP_MAI/OOP_hometasks/MAI_OOP_hometask_6/elf.cpp",
+  "output": "CMakeFiles/lab_06.dir/elf.cpp.o"
+}
+]
